@@ -1,0 +1,53 @@
+@mixin clearfix 
+    &:after 
+        display: table
+        clear: both
+        content: ''
+    
+
+    
+html 
+    box-sizing: border-box
+
+
+*,
+*:before,
+*:after 
+    box-sizing: border-box
+.l-wrap 
+    max-width: 1140px
+    margin-right: auto
+    margin-left: auto
+
+.three-col-grid .grid-item 
+    width: 33.33333%
+    float: left
+
+.three-col-grid:after 
+    @include clearfix
+
+.grid-item 
+    /* 注意这里列宽要比第一种情况小 */
+    width: calc((100% - 20px * 2) / 3)
+    margin-right: 20px
+    float: left
+    height: 50px
+    line-height: 50px
+    text-align: center
+    overflow: hidden
+    &:nth-child(odd)
+        background-color: pink
+    &:nth-child(even)
+        background-color: lightgreen
+    &:nth-child(3n+3)
+        background-color: yellow
+    &:nth-child(2n+2)
+
+        margin-right: 0
+.grid-inner
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 50px
+    text-align: center
+    background: rgba(red, 0.25)

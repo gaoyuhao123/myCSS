@@ -1,0 +1,72 @@
+@charset "UTF-8";
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.l-wrap {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.three-col-grid .grid-item {
+  width: 33.33333%;
+  float: left;
+}
+
+.three-col-grid:after:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.grid-item {
+  /* 注意这里列宽要比第一种情况小 */
+  width: calc((100% - 20px * 2) / 3);
+  margin-right: 20px;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.grid-item:nth-child(odd) {
+  background-color: pink;
+}
+
+.grid-item:nth-child(even) {
+  background-color: lightgreen;
+}
+
+.grid-item:nth-child(3n+3) {
+  background-color: yellow;
+}
+
+.grid-item:nth-child(2n+2) {
+  margin-right: 0;
+}
+
+.grid-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.25);
+}
+/*# sourceMappingURL=style.css.map */
